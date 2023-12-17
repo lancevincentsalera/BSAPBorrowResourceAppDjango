@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../assets/Barangay-Calumangan-Logo.png'); /* Path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fixed background */
+    background-color: rgba(242, 242, 242, 0.3); /* Background color with reduced opacity (70%) */
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 32px; /* Larger font size */
+    margin: 20px 0;
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase text */
+}
+
+form {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+button[type="submit"] {
+    background-color: #003366;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.content-container {
+    background-color: #ffffff; /* Background color for the container */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Elevation shadow */
+    max-width: 400px;
+    text-align: center; /* Center content horizontally */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+button[type="submit"]:hover {
+    background-color: #002350;
+}
+
+a {
+    color: #003366;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.navbar {
+    background-color: rgba(0, 68, 136, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-container a:hover {
+    background-color: #002244;
+}
+
+.logout-button {
+    background-color: #D9534F; /* Bootstrap's btn-danger color for logout buttons */
+    color: white;
+    padding: 8px 12px;
+    margin-left: 20px; /* Add a bit of space between the last nav item and logout */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #C9302C; /* Darken color on hover */
+}
+

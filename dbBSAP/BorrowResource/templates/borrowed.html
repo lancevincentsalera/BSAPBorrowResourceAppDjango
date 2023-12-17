@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/borrowed_dashboard.css' %}">
+</head>
+<body>
+    <div class="user-welcome">
+        <div class="user-info">
+            Welcome,
+            {% if user.user_type == "R" %}
+                {{ user.first_name }} {{ user.last_name }}
+            {% else %}
+                {{ user.organization_name }}
+            {% endif %}
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="{% url 'borrowed' %}">Borrowed Resources</a>
+                <a href="{% url 'resource' %}">Available Resources</a>
+                <a href="{% url 'logout' %}" class="logout-button">Log Out</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content-container">
+        <h2>BORROW RESOURCE</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Borrower</th>
+                    <th>Resource Name</th>
+                    <th>Borrowed Quantity</th>
+                    <th>Status</th>
+                    <th>Date Borrowed</th>
+                    <th>Expected date of return</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in borrowed_data %}
+                    <tr>
+                        <td>
+                            {{ item.1 }}
+                        </td>
+                        <td>{{ item.2 }}</td>
+                        <td>{{ item.3 }}</td>
+                        <td>
+                            {% if item.4 == "P" %}
+                        	    Pending
+                            {% elif item.4 == "A" %}
+                                Approved
+                            {% else  %}
+                                Rejected
+                            {% endif %}
+                        </td>
+                        <td>{{ item.5 }}</td>
+                        <td>{{ item.6 }}</td>
+                        <td class="action-buttons">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="borrowed_id" value="{{ item.0 }}">
+                                {% if item.4 == "A" %}
+                                    <button class="edit-button" type="submit">Return</button>
+                                {% else %}
+                                    <button class="edit-button" type="button" disabled>Return</button>
+                                {% endif %}
+                            </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="7">You haven't borrowed anything yet</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

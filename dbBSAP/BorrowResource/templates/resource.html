@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/resource_dashboard.css' %}">
+</head>
+<body>
+    <div class="user-welcome">
+        <div class="user-info">
+            Welcome,
+            {% if user.user_type == "R" %}
+                {{ user.first_name }} {{ user.last_name }}
+            {% else %}
+                {{ user.organization_name }}
+            {% endif %}
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="{% url 'borrowed' %}">Borrowed Resources</a>
+                <a href="{% url 'resource' %}">Available Resources</a>
+                <a href="{% url 'logout' %}" class="logout-button">Log Out</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content-container">
+        <h2>BORROW RESOURCE</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Resource Name</th>
+                        <th>Available Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in resource %}
+                        <tr>
+                            <td>{{ r.2 }}</td>
+                            <td>{{ r.1 }}</td>
+                            <td class="action-buttons">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="resource_id" value="{{ r.0 }}">
+                                    <button class="edit-button">Borrow</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="7">No available resources to borrow</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+</body>
+</html>

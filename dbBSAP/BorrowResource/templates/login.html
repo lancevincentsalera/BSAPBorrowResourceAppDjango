@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/borrow_resource.css' %}">
+</head>
+<body>
+    <div class="content-container">
+        <h2>BORROW - Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+        </form>
+        <h4>Don't have an account? </h4>
+        <a href="{% url 'register' %}">Register</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-image: url('../assets/Barangay-Calumangan-Logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(242, 242, 242, 0.8); /* Adjusted for better readability */
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    color: #004488; /* Slightly brighter color for contrast */
+    font-size: 34px; /* Slightly larger for emphasis */
+    margin: 25px 0; /* Adjusted margin for spacing */
+    font-weight: 600; /* Less bold for a modern look */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Added letter spacing for readability */
+}
+
+.content-container {
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* Lighter border for a softer look */
+    padding: 50px; /* Increased padding for more space */
+    border-radius: 8px; /* Slightly more rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    max-width: 1200px; /* Slightly wider for more content */
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px; /* Increased margin for spacing */
+    table-layout: fixed;
+}
+
+th {
+    background-color: #004488; /* Changed to match header color */
+    color: #ffffff;
+    padding: 10px; /* Increased padding for a better look */
+    text-align: center;
+    font-size: 16px; /* Larger font size for readability */
+    font-weight: 500; /* Medium weight for emphasis */
+    box-sizing: border-box;
+}
+
+td {
+    background-color: #FAFAFA; /* Lighter shade for contrast */
+    color: #333; /* Darker text for better readability */
+    padding: 10px; /* Increased padding for comfort */
+    text-align: center;
+    border-bottom: 1px solid #eee; /* Added bottom border for definition */
+    box-sizing: border-box;
+}
+
+thead {
+    display: block;
+}
+
+tbody {
+    display: block;
+    max-height: 300px; /* Adjusted height */
+    overflow-y: auto;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 13%; text-align: center}
+th:nth-child(2), td:nth-child(2) { width: 18%; text-align: center}
+th:nth-child(3), td:nth-child(3) { width: 17%; text-align: center}
+th:nth-child(4), td:nth-child(4) { width: 13%; text-align: center}
+th:nth-child(5), td:nth-child(5) { width: 14%; text-align: center}
+th:nth-child(6), td:nth-child(6) { width: 27.4%; text-align: center}
+th:nth-child(7), td:nth-child(7) { width: 16.6%; text-align: center}
+
+.action-buttons {
+    text-align: center;
+}
+
+button.edit-button {
+    background-color: #0055AA; /* Brighter button color */
+    color: #fff;
+    padding: 10px 15px; /* Increased padding for a better feel */
+    font-size: 14px; /* Larger font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    font-weight: 600; /* Medium bold for emphasis */
+
+    &:disabled {
+        background-color: #cccccc; /* A neutral grey color for disabled state */
+        cursor: default; /* Removes the pointer cursor */
+        pointer-events: none; /* Disables all pointer events including hover */
+        color: #666666; /* A darker text color for better readability on grey background */
+    }
+}
+
+button.edit-button:hover:not(:disabled) {
+    background-color: #003377; /* Darker shade on hover for interactivity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
+}
+
+td[colspan="7"] {
+    text-align: center;
+}
+
+.navbar {
+    background-color: rgba(0, 68, 136, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-container a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-container a:hover {
+    background-color: #002244;
+}
+
+.user-welcome {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #004488; /* Or any other color that fits your design */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+}
+
+.logout-button {
+    background-color: #D9534F; /* Bootstrap's btn-danger color for logout buttons */
+    color: white;
+    padding: 8px 12px;
+    margin-left: 20px; /* Add a bit of space between the last nav item and logout */
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #C9302C; /* Darken color on hover */
+}
+
